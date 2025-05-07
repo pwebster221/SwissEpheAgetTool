@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 import swisseph as swe
 from datetime import datetime
 
-app = FastAPI()
+app = FastAPI(servers=[{"url": "http://92.243.25.184:8000"}])
 
 @app.get("/planet/{planet}/{year}/{month}/{day}")
 def planet_position(planet: str, year: int, month: int, day: int):
